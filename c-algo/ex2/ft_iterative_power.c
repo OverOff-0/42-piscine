@@ -1,52 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/08 10:32:35 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/09 14:37:06 by mcheddad         ###   ########.fr       */
+/*   Created: 2026/03/10 15:25:35 by mcheddad          #+#    #+#             */
+/*   Updated: 2026/03/10 17:32:55 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+//#include <stdio.h>
 
-void	ft_putchar(char c)
+int	ft_iterative_power(int nb, int power)
 {
-	write(1, &c, 1);
-}
+	int	value;
 
-void	ft_print_comb(void)
-{
-	int	a;
-	int	b;
-	int	c;
-
-	a = 0;
-	while (a <= 7)
+	if (power < 0 || nb < 0)
+		return (0);
+	if (power == 0)
+		return (1);
+	else
 	{
-		b = a + 1;
-		while (b <= 8)
+		value = nb;
+		while (power > 1)
 		{
-			c = b + 1;
-			while (c <= 9)
-			{
-				ft_putchar(a + '0');
-				ft_putchar(b + '0');
-				ft_putchar(c + '0');
-				if (!(a == 7 && b == 8 && c == 9))
-					write(1, ", ", 2);
-				c++;
-			}
-			b++;
+			value = value * nb;
+			power--;
 		}
-		a++;
 	}
+	return (value);
 }
 
-/*int main()
+/*int main (void)
 {
-	ft_print_comb();
-	return (0);
+	printf("%d", ft_iterative_power(4, 3));
+	printf("%d", ft_iterative_power(0, 3));
+	printf("%d", ft_iterative_power(4, 0));
+	printf("%d", ft_iterative_power(-4, -3));
 }*/

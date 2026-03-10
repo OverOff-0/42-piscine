@@ -1,52 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/08 10:32:35 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/09 14:37:06 by mcheddad         ###   ########.fr       */
+/*   Created: 2026/03/10 12:29:42 by mcheddad          #+#    #+#             */
+/*   Updated: 2026/03/10 17:31:14 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+//#include <stdio.h>
 
-void	ft_putchar(char c)
+int	ft_iterative_factorial(int nb)
 {
-	write(1, &c, 1);
-}
+	int	value;
 
-void	ft_print_comb(void)
-{
-	int	a;
-	int	b;
-	int	c;
-
-	a = 0;
-	while (a <= 7)
+	if (nb < 0)
+		return (0);
+	if (nb == 0 || nb == 1)
+		return (1);
+	else
 	{
-		b = a + 1;
-		while (b <= 8)
+		value = 1;
+		while (nb > 1)
 		{
-			c = b + 1;
-			while (c <= 9)
-			{
-				ft_putchar(a + '0');
-				ft_putchar(b + '0');
-				ft_putchar(c + '0');
-				if (!(a == 7 && b == 8 && c == 9))
-					write(1, ", ", 2);
-				c++;
-			}
-			b++;
+			value = value * nb;
+			nb--;
 		}
-		a++;
 	}
+	return (value);
 }
 
-/*int main()
+/*int main(void)
 {
-	ft_print_comb();
+	printf("%d", ft_iterative_factorial(4));
 	return (0);
 }*/
