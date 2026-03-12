@@ -1,35 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_power.c                               :+:      :+:    :+:   */
+/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/10 15:57:52 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/11 12:01:56 by mcheddad         ###   ########.fr       */
+/*   Created: 2026/03/12 16:14:54 by mcheddad          #+#    #+#             */
+/*   Updated: 2026/03/12 17:05:27 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <unistd.h>
 
-int	ft_recursive_power(int nb, int power)
+void	ft_putchar(char c)
 {
-	int	value;
+	write(1, &c, 1);
+}
 
-	if (power < 0)
-		return (0);
-	if (power == 0)
-		return (1);
-	else
+void	ft_hex(unsigned char c)
+{
+	char	*hex;
+
+	hex = "0123456789abccdef";
+	ft_putchar(hex[c / 16]);
+	ft_putchar(hex[c % 16]);
+}
+
+void	ft_putstr_non_printable(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
 	{
-		value = nb;
-		value = value * ft_recursive_power(nb, power - 1);
+		if (str[i] >= 32 && str[i] <= 126)
+			ft_putchar(str[i]);
+		else
+		{
+			ft_putchar('\\');
+			ft_hex(str[i]);
+		}
+		i++;
 	}
-	return (value);
 }
 
 /*int main(void)
 {
-        printf("%d", ft_recursive_power(-4, 5));
-        return (0);
+	ft_putstr_non_printable("Hello\nHow are you");
 }*/

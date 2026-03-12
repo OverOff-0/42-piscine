@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_power.c                               :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/10 15:57:52 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/11 12:01:56 by mcheddad         ###   ########.fr       */
+/*   Created: 2026/03/12 15:42:59 by mcheddad          #+#    #+#             */
+/*   Updated: 2026/03/12 16:11:12 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+//#include <unistd.h>
 
-int	ft_recursive_power(int nb, int power)
+void	ft_putstr(char *str)
 {
-	int	value;
+	int	i;
 
-	if (power < 0)
-		return (0);
-	if (power == 0)
-		return (1);
-	else
+	i = 0;
+	while (str[i] != '\0')
 	{
-		value = nb;
-		value = value * ft_recursive_power(nb, power - 1);
+		write(1, &str[i], 1);
+		i++;
 	}
-	return (value);
 }
 
 /*int main(void)
 {
-        printf("%d", ft_recursive_power(-4, 5));
-        return (0);
+	ft_putstr("hello");
 }*/

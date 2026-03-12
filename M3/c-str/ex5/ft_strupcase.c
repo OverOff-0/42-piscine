@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_power.c                               :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/10 15:57:52 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/11 12:01:56 by mcheddad         ###   ########.fr       */
+/*   Created: 2026/03/12 13:31:20 by mcheddad          #+#    #+#             */
+/*   Updated: 2026/03/12 14:24:22 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-
-int	ft_recursive_power(int nb, int power)
+char	*ft_strupcase(char *str)
 {
-	int	value;
+	char	*boite;
 
-	if (power < 0)
-		return (0);
-	if (power == 0)
-		return (1);
-	else
+	boite = str;
+	while (*str)
 	{
-		value = nb;
-		value = value * ft_recursive_power(nb, power - 1);
+		if (*str >= 'a' && *str <= 'z')
+			*str -= 32;
+		str++;
 	}
-	return (value);
+	return (boite);
 }
 
-/*int main(void)
+/*#include <stdio.h>
+
+int     main(void)
 {
-        printf("%d", ft_recursive_power(-4, 5));
-        return (0);
+        char stra[] = "ajajaja";
+        char strb[] = "A5d5HAHAH";
+
+        printf("%s\n", ft_strupcase(stra));
+        printf("%s\n", ft_strupcase(strb));
 }*/

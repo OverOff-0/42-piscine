@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_power.c                               :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/10 15:57:52 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/11 12:01:56 by mcheddad         ###   ########.fr       */
+/*   Created: 2026/03/12 15:18:58 by mcheddad          #+#    #+#             */
+/*   Updated: 2026/03/12 17:06:04 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-
-int	ft_recursive_power(int nb, int power)
+int	ft_strlen(char *str)
 {
-	int	value;
+	int	i;
+	int	count;
 
-	if (power < 0)
-		return (0);
-	if (power == 0)
-		return (1);
-	else
+	i = 0;
+	count = 0;
+	while (str[i])
 	{
-		value = nb;
-		value = value * ft_recursive_power(nb, power - 1);
+		i++;
+		count++;
 	}
-	return (value);
+	return (count);
 }
 
-/*int main(void)
+/*#include <stdio.h>
+
+int     main(void)
 {
-        printf("%d", ft_recursive_power(-4, 5));
-        return (0);
+        char stra[] = "ajajaja";
+        char strb[] = "A5d5HAHAH";
+
+        printf("%d\n", ft_strlen(stra));
+        printf("%d\n", ft_strlen(strb));
 }*/

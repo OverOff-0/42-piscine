@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_power.c                               :+:      :+:    :+:   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/10 15:57:52 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/11 12:01:56 by mcheddad         ###   ########.fr       */
+/*   Created: 2026/03/12 13:27:05 by mcheddad          #+#    #+#             */
+/*   Updated: 2026/03/12 14:21:57 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-
-int	ft_recursive_power(int nb, int power)
+int	ft_str_is_uppercase(char *str)
 {
-	int	value;
-
-	if (power < 0)
-		return (0);
-	if (power == 0)
+	if (!str)
 		return (1);
-	else
+	while (*str)
 	{
-		value = nb;
-		value = value * ft_recursive_power(nb, power - 1);
+		if ((*str < 'A' || *str > 'Z'))
+			return (0);
+		str++;
 	}
-	return (value);
+	return (1);
 }
 
-/*int main(void)
+/*#include <stdio.h>
+
+int     main(void)
 {
-        printf("%d", ft_recursive_power(-4, 5));
-        return (0);
+        char stra[] = "ajajaja";
+        char strb[] = "AHAHAH";
+
+        printf("%d\n", ft_str_is_uppercase(stra));
+        printf("%d\n", ft_str_is_uppercase(strb));
 }*/
