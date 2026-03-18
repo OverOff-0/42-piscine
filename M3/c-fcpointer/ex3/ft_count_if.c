@@ -6,11 +6,11 @@
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 14:22:50 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/16 16:05:43 by mcheddad         ###   ########.fr       */
+/*   Updated: 2026/03/17 14:27:26 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	test_b(char *str)
+/*int	test_b(char *str)
 {
 	int	i;
 
@@ -22,7 +22,7 @@ int	test_b(char *str)
 		i++;
 	}
 	return (0);
-}
+}*/
 
 int	ft_count_if(char **tab, int length, int(*f)(char*))
 {
@@ -31,18 +31,19 @@ int	ft_count_if(char **tab, int length, int(*f)(char*))
 
 	j = 0;
 	count = 0;
-	while (tab[j] != 0)
+	while (j < length)
 	{
-		count++;
+		if (f(tab[j]) == 1)
+			count++;
 		j++;
 	}
 	return (count);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int	main(void)
 {
-	char *str[] = {"yes bebe"};
-	printf("%d\n", ft_count_if(str, 1, test_b));
-}
+	char *str[] = {"yes bebe, alors en mode gelar", "abcdef", "bbbb", "ahahaha"};
+	printf("%d\n", ft_count_if(str, 4, test_b));
+}*/

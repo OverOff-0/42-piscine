@@ -6,22 +6,22 @@
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 13:31:20 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/12 14:24:22 by mcheddad         ###   ########.fr       */
+/*   Updated: 2026/03/17 11:11:41 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strupcase(char *str)
 {
-	char	*boite;
+	int	i;
 
-	boite = str;
-	while (*str)
+	i = 0;
+	while (str[i])
 	{
-		if (*str >= 'a' && *str <= 'z')
-			*str -= 32;
-		str++;
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] -= 32;
+		i++;
 	}
-	return (boite);
+	return (str);
 }
 
 /*#include <stdio.h>

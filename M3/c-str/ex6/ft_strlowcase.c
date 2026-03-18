@@ -6,22 +6,22 @@
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 13:58:46 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/12 14:26:03 by mcheddad         ###   ########.fr       */
+/*   Updated: 2026/03/17 11:14:41 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strlowcase(char *str)
 {
-	char	*boite;
+	int	i;
 
-	boite = str;
-	while (*str)
+	i = 0;
+	while (str[i])
 	{
-		if (*str >= 'A' && *str <= 'Z')
-			*str += 32;
-		str++;
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] += 32;
+		i++;
 	}
-	return (boite);
+	return (str);
 }
 
 /*#include <stdio.h>
