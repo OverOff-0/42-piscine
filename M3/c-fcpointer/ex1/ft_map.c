@@ -6,12 +6,12 @@
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 11:13:51 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/18 11:43:14 by mcheddad         ###   ########.fr       */
+/*   Updated: 2026/03/18 12:04:43 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <unistd.h>
+/*#include <unistd.h>
 
 void	ft_putchar(char c)
 {
@@ -23,7 +23,7 @@ void	ft_putnbr(int nb)
 	long	nbr;
 
 	nbr = nb;
-	if (nbr = -2147483648)
+	if (nbr == -2147483648)
 		write(1, "-2147483648", 11);
 	else if (nbr < 0)
 	{
@@ -44,7 +44,7 @@ void	ft_putnbr(int nb)
 int	double_value(int x)
 {
 	return (x * 2);
-}
+}*/
 
 int	*ft_map(int *tab, int length, int (*f)(int))
 {
@@ -63,7 +63,7 @@ int	*ft_map(int *tab, int length, int (*f)(int))
 	return (new);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	int tab[3] = {50, 3, 5};
 	int i;
@@ -80,4 +80,4 @@ int	main(void)
 	}
 	free(result);
 	return(0);
-}
+}*/
