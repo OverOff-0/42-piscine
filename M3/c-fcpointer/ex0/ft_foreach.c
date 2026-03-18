@@ -6,7 +6,7 @@
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 11:03:23 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/18 11:23:48 by mcheddad         ###   ########.fr       */
+/*   Updated: 2026/03/18 14:48:58 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	ft_putnbr(int nb)
 		ft_putnbr(nbr % 10);
 	}
 }*/
-
 
 void	ft_foreach(int *tab, int length, void (*f)(int))
 {

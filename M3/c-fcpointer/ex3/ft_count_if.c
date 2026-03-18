@@ -6,7 +6,7 @@
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 14:22:50 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/17 14:27:26 by mcheddad         ###   ########.fr       */
+/*   Updated: 2026/03/18 14:49:31 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 	return (0);
 }*/
 
-int	ft_count_if(char **tab, int length, int(*f)(char*))
+int	ft_count_if(char **tab, int length, int (*f)(char*))
 {
 	int	j;
 	int	count;
