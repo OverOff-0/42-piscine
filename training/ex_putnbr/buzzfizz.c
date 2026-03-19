@@ -6,7 +6,7 @@
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 13:40:31 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/19 14:30:35 by mcheddad         ###   ########.fr       */
+/*   Updated: 2026/03/19 14:32:15 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_putnbr(int nb)
 {
 	if (nb >= 10)
 		ft_putnbr(nb / 10);
-		ft_putnbr((nb % 10) + '0');
+	ft_putchar((nb % 10) + '0');
 }
 
 void	fizzbuzz()
