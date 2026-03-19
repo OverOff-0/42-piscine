@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_first_param.c                                  :+:      :+:    :+:   */
+/*   ft_countlen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/19 16:38:38 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/19 16:44:22 by mcheddad         ###   ########.fr       */
+/*   Created: 2026/03/19 14:55:56 by mcheddad          #+#    #+#             */
+/*   Updated: 2026/03/19 14:57:49 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	main(int argc, char **argv)
+int	ft_countlen(char *str)
 {
 	int	i;
 
 	i = 0;
-	if (argc > 1)
+	while (tab[i])
 	{
-		while (argv[1][i])
-		{
-			write(1, &argv[1][i], 1);
-			i++;
-		}
+		i++;
 	}
-	write(1, "\n", 1);
-	return (0);
+	return(i);
 }

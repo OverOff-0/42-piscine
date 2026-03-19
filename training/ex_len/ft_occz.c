@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_first_param.c                                  :+:      :+:    :+:   */
+/*   ft_occz.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/19 16:38:38 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/19 16:44:22 by mcheddad         ###   ########.fr       */
+/*   Created: 2026/03/19 14:58:05 by mcheddad          #+#    #+#             */
+/*   Updated: 2026/03/19 15:46:46 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	main(int argc, char **argv)
+int	ft_occz(char *str)
 {
 	int	i;
+	int	count;
 
 	i = 0;
-	if (argc > 1)
+	count = 0;
+	while (str[i])
 	{
-		while (argv[1][i])
-		{
-			write(1, &argv[1][i], 1);
-			i++;
-		}
+		if (str[i] == 'z')
+			count++;
+		i++
 	}
-	write(1, "\n", 1);
-	return (0);
 }

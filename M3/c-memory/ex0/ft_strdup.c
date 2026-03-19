@@ -1,30 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_first_param.c                                  :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/19 16:38:38 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/19 16:44:22 by mcheddad         ###   ########.fr       */
+/*   Created: 2026/03/19 11:46:02 by mcheddad          #+#    #+#             */
+/*   Updated: 2026/03/19 12:10:34 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-int	main(int argc, char **argv)
+char *ft_strdup(char *src)
 {
-	int	i;
-
-	i = 0;
-	if (argc > 1)
-	{
-		while (argv[1][i])
-		{
-			write(1, &argv[1][i], 1);
-			i++;
-		}
-	}
-	write(1, "\n", 1);
-	return (0);
-}
