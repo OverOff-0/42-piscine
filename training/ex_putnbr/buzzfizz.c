@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   buzzfizz.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/19 12:50:39 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/19 13:39:25 by mcheddad         ###   ########.fr       */
+/*   Created: 2026/03/19 13:40:31 by mcheddad          #+#    #+#             */
+/*   Updated: 2026/03/19 13:45:08 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	fizzbuzz()
 {
-	write(1, &c, 1);
-}
+	int	count;
 
-void	ft_putnbr(int nb)
-{
-	long	nbr;
-
-	nbr = nb;
-	if (nbr == -2147483648)
-		write(1, "-2147483648", 11);
-	else if (nbr < 0)
-	{
-		ft_putchar('-');
-		ft_putnbr(-nbr);
-	}
-	else if (nbr < 10)
-	{
-		ft_putchar(nbr + '0');
-	}
+	if (count % 15)
+		write(1, "fizzbuzz", 8);
+	else if (count % 3)
+		write(1, "fizz", 4);
+	else if (count % 5)
+		write(1, "buzz", 4);
 	else
-	{
-		ft_putnbr(nbr / 10);
-		ft_putnbr(nbr % 10);
-	}
+		count++;
+	return (count);
 }
