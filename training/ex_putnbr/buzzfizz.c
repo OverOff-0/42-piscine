@@ -6,7 +6,7 @@
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 13:40:31 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/19 14:32:15 by mcheddad         ###   ########.fr       */
+/*   Updated: 2026/03/19 14:35:08 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,11 @@ void	fizzbuzz()
 		else if (count % 5 == 0)
 			write(1, "buzz", 4);
 		else
+		{
 			ft_putnbr(count);
-			ft_putchar('\n');
-			count++;
+		}
+		ft_putchar('\n');
+		count++;
 	}
 }
 
