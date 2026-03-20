@@ -6,7 +6,7 @@
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/20 11:02:26 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/20 11:21:18 by mcheddad         ###   ########.fr       */
+/*   Updated: 2026/03/20 11:23:49 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	ft_atoi(char *str)
 	return (result * sign);
 }
 
-/*void	ft_purchar(char c)
+/*void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
@@ -45,7 +45,7 @@ int	ft_atoi(char *str)
 void	ft_putnbr(int nb)
 {
 	if (nb >= 10)
-		putnbr(nb / 10);
+		ft_putnbr(nb / 10);
 	ft_putchar((nb % 10) + '0');
 }
 
