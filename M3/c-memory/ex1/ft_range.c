@@ -1,55 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/19 11:46:02 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/22 16:14:41 by mcheddad         ###   ########.fr       */
+/*   Created: 2026/03/22 11:52:59 by mcheddad          #+#    #+#             */
+/*   Updated: 2026/03/22 12:43:43 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <stdlib.h>
 
-int	ft_strlen(char *str)
+int	*ft_range(int min, int max)
 {
+	int	*tab;
 	int	i;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-char	*ft_strdup(char *src)
-{
-	char	*str;
-	int		i;
-
-	str = malloc(sizeof(char) * (ft_strlen(src) + 1));
-	if (!str)
+	if (min >= max)
 		return (0);
-	i++;
-	while (src[i])
+
+	tab = malloc(sizeof(int) * (max - min));
+	if (!tab)
+		return (0);
+	i = 0;
+	while (min < max)
 	{
-		str[i] = src[i];
+		tab[i] = min;
+		min++;
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	return (tab);
 }
 
-#include <stdio.h>
-int	main(void)
+int main(void)
 {
-	char	*str = "Hello World 42 !";
-	char	*copie;
+	int	*tab;
+	int	i;
+	int	min;
+	int	max;
 
-	copie = ft_strdup(str);
-	printf("normal %s\n", str);
-	printf("copie %s\n", copie);
-	free(copie);
-
+	i = 0;
+	min = 5;
+	max = 59;
+	tab = ft_range(min, max);
+	if (!tab)
+		return (0);
+	while (i < (max - min))
+	{
+		printf("%d ", tab[i]);
+		i++;
+	}
+	free(tab);
 	return (0);
 }

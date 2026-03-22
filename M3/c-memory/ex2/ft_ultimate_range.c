@@ -1,55 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/19 11:46:02 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/22 16:14:41 by mcheddad         ###   ########.fr       */
+/*   Created: 2026/03/22 12:25:35 by mcheddad          #+#    #+#             */
+/*   Updated: 2026/03/22 12:35:10 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_strlen(char *str)
+int	ft_ultimate_range(int **range, int min, int max)
 {
 	int	i;
+	int	size;
 
 	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-char	*ft_strdup(char *src)
-{
-	char	*str;
-	int		i;
-
-	str = malloc(sizeof(char) * (ft_strlen(src) + 1));
-	if (!str)
+	if (min >= max)
+		*range = 0;
 		return (0);
-	i++;
-	while (src[i])
+	size = max - min;
+	*range = malloc(sizeof(int) *size);
+	if (!*range)
+		return (-1);
+	while (i < size)
 	{
-		str[i] = src[i];
+		(*range)[i] = min;
+		min++;
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
-}
-
-#include <stdio.h>
-int	main(void)
-{
-	char	*str = "Hello World 42 !";
-	char	*copie;
-
-	copie = ft_strdup(str);
-	printf("normal %s\n", str);
-	printf("copie %s\n", copie);
-	free(copie);
-
-	return (0);
+	return (size);
 }
