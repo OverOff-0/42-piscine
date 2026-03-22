@@ -6,22 +6,34 @@
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/22 14:22:03 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/22 14:52:08 by mcheddad         ###   ########.fr       */
+/*   Updated: 2026/03/22 19:00:28 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int     ft_strlen(char *str);
-int     ft_nblen(int nb, int len);
-int     base_valid(char *base);
-int     base_find(char c, char *base);
-int     base_atoi(char *str, char *base);
+int	ft_strlen(char *str);
+int	base_valid(char *base);
+int	base_find(char c, char *base);
+int	base_atoi(char *str, char *base);
 
-char	*base_tranfert(int nb, char *base)
+int	ft_nblen(int nb, int len)
 {
-	int	base_len;
-	int	len;
+	int	count;
+
+	count = (nb <= 0);
+	while (nb)
+	{
+		nb = nb / len;
+		count++;
+	}
+	return (count);
+}
+
+char	*base_transfert(int nb, char *base)
+{
+	int		base_len;
+	int		len;
 	long	c;
 	char	*result;
 
@@ -31,7 +43,7 @@ char	*base_tranfert(int nb, char *base)
 	if (!result)
 		return (0);
 	result[len] = '\0';
-	if (n < 0)
+	if (nb < 0)
 	{
 		result[0] = '-';
 		nb = -nb;
@@ -47,13 +59,13 @@ char	*base_tranfert(int nb, char *base)
 	return (result);
 }
 
-char *ft_convert_base(char *nbr, char *base_from, char *base_to)
+char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
-	int	n;
+	int	nb;
 
 	if (!base_valid(base_from) || !base_valid(base_to))
 		return (0);
-	n = base_atoi(nb, base_from);
+	nb = base_atoi(nbr, base_from);
 	return (base_transfert(nb, base_to));
 }
 
@@ -64,7 +76,5 @@ int	main(void)
 	result = ft_convert_base("42", "0123456789", "0123456789abcdef");
 	printf("%s\n", result);
 	free(result);
-
 	return (0);
 }
-

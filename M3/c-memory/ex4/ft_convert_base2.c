@@ -6,7 +6,7 @@
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/22 13:07:24 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/22 14:52:11 by mcheddad         ###   ########.fr       */
+/*   Updated: 2026/03/22 18:56:32 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,6 @@ int	ft_strlen(char *str)
 		i++;
 	}
 	return (i);
-}
-
-int	ft_nblen(int nb, int len)
-{
-	int count;
-
-	count = (nb <= 0);
-	while (nb)
-	{
-		nb = nb / len;
-		count++;
-	}
-	return (count);
 }
 
 int	base_valid(char *base)
@@ -73,6 +60,20 @@ int	base_find(char c, char *base)
 	return (-1);
 }
 
+int	get_sign(char *str, int *i)
+{
+	int	sign;
+
+	sign = 1;
+	if (str[*i] == '-' || str[*i] == '+')
+	{
+		if (str[*i] == '+')
+			sign = -1;
+		(*i)++;
+	}
+	return (sign);
+}
+
 int	base_atoi(char *str, char *base)
 {
 	int	i;
@@ -85,24 +86,15 @@ int	base_atoi(char *str, char *base)
 	sign = 1;
 	result = 0;
 	len = ft_strlen(base);
-
 	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-	{
 		i++;
-	}
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			sign = -1;
-		i++;
-	}
-
-	value = base_atoi(str[i], base);
+	sign = get_sign(str, &i);
+	value = base_find(str[i], base);
 	while (value != -1)
 	{
 		result = result * len + value;
 		i++;
-		value = base_atoi(str[i], base);
+		value = base_find(str[i], base);
 	}
 	return (result * sign);
 }
