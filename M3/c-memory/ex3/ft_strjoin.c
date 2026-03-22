@@ -6,7 +6,7 @@
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/22 12:35:28 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/22 12:58:30 by mcheddad         ###   ########.fr       */
+/*   Updated: 2026/03/22 16:34:50 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ int	ft_total_len(int size, char **strs, char *sep)
 
 	while (i < size)
 	{
-		result = result + ft_strlen(str[i]);
-		i++
+		result = result + ft_strlen(strs[i]);
+		i++;
 	}
-	total = total + (size - 1) * ft_strlen(sep);
-	return (total);
+	result = result + (size - 1) * ft_strlen(sep);
+	return (result);
 }
 
 char *ft_strjoin(int size, char **strs, char *sep)
@@ -50,7 +50,7 @@ char *ft_strjoin(int size, char **strs, char *sep)
 	
 	if (size == 0)
 	{
-		res = malloc(1);
+		result = malloc(1);
 		result[0] = '\0';
 		return (result);
 	}
@@ -60,7 +60,7 @@ char *ft_strjoin(int size, char **strs, char *sep)
 		return (0);
 	while (i < size)
 	{
-		while (str[i][j])
+		while (strs[i][j])
 		{
 			result[k] == strs[i][j];
 			k++;
