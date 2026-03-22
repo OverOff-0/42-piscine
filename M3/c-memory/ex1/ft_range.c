@@ -6,11 +6,10 @@
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/22 11:52:59 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/22 16:19:14 by mcheddad         ###   ########.fr       */
+/*   Updated: 2026/03/22 19:15:48 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
 
 int	*ft_range(int min, int max)
@@ -33,6 +32,8 @@ int	*ft_range(int min, int max)
 	return (tab);
 }
 
+/*#include <stdio.h>
+
 int	main(void)
 {
 	int	*tab;
@@ -53,4 +54,4 @@ int	main(void)
 	}
 	free(tab);
 	return (0);
-}
+}*/

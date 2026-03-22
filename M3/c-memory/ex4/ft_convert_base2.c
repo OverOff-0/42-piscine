@@ -6,7 +6,7 @@
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/22 13:07:24 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/22 18:56:32 by mcheddad         ###   ########.fr       */
+/*   Updated: 2026/03/22 19:06:26 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ int	get_sign(char *str, int *i)
 	sign = 1;
 	if (str[*i] == '-' || str[*i] == '+')
 	{
-		if (str[*i] == '+')
-			sign = -1;
+		if (str[*i] == '-')
+			sign = -sign;
 		(*i)++;
 	}
 	return (sign);

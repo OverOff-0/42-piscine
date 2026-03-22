@@ -6,7 +6,7 @@
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 16:14:54 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/12 17:05:27 by mcheddad         ###   ########.fr       */
+/*   Updated: 2026/03/22 19:49:19 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_hex(unsigned char c)
 {
 	char	*hex;
 
-	hex = "0123456789abccdef";
+	hex = "0123456789abcdef";
 	ft_putchar(hex[c / 16]);
 	ft_putchar(hex[c % 16]);
 }
