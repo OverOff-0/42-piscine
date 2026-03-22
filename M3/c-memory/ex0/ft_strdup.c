@@ -6,7 +6,7 @@
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 11:46:02 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/22 16:14:41 by mcheddad         ###   ########.fr       */
+/*   Updated: 2026/03/22 16:18:41 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ char	*ft_strdup(char *src)
 	char	*str;
 	int		i;
 
+	i = 0;
 	str = malloc(sizeof(char) * (ft_strlen(src) + 1));
 	if (!str)
 		return (0);
-	i++;
 	while (src[i])
 	{
 		str[i] = src[i];
@@ -40,7 +40,7 @@ char	*ft_strdup(char *src)
 	return (str);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 int	main(void)
 {
 	char	*str = "Hello World 42 !";
@@ -52,4 +52,4 @@ int	main(void)
 	free(copie);
 
 	return (0);
-}
+}*/

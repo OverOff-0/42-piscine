@@ -6,7 +6,7 @@
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/22 11:52:59 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/22 12:43:43 by mcheddad         ###   ########.fr       */
+/*   Updated: 2026/03/22 16:19:14 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	*ft_range(int min, int max)
 
 	if (min >= max)
 		return (0);
-
 	tab = malloc(sizeof(int) * (max - min));
 	if (!tab)
 		return (0);
@@ -34,7 +33,7 @@ int	*ft_range(int min, int max)
 	return (tab);
 }
 
-int main(void)
+int	main(void)
 {
 	int	*tab;
 	int	i;

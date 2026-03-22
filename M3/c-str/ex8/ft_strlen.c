@@ -6,23 +6,20 @@
 /*   By: mcheddad <mcheddad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 15:18:58 by mcheddad          #+#    #+#             */
-/*   Updated: 2026/03/12 17:06:04 by mcheddad         ###   ########.fr       */
+/*   Updated: 2026/03/22 16:28:38 by mcheddad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strlen(char *str)
 {
 	int	i;
-	int	count;
 
 	i = 0;
-	count = 0;
 	while (str[i])
 	{
 		i++;
-		count++;
 	}
-	return (count);
+	return (i);
 }
 
 /*#include <stdio.h>
